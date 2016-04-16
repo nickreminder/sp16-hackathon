@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		FCDFC0851B2F7F110015115E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDFC0841B2F7F110015115E /* AppDelegate.swift */; };
-		FCDFC0871B2F7F110015115E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDFC0861B2F7F110015115E /* FirstViewController.swift */; };
-		FCDFC0891B2F7F110015115E /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDFC0881B2F7F110015115E /* SecondViewController.swift */; };
 		FCDFC08C1B2F7F110015115E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCDFC08A1B2F7F110015115E /* Main.storyboard */; };
 		FCDFC08E1B2F7F120015115E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCDFC08D1B2F7F120015115E /* Images.xcassets */; };
 		FCDFC0911B2F7F120015115E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCDFC08F1B2F7F120015115E /* LaunchScreen.xib */; };
@@ -34,8 +32,6 @@
 		FCDFC07F1B2F7F110015115E /* LeftSlideoutMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeftSlideoutMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCDFC0831B2F7F110015115E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCDFC0841B2F7F110015115E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FCDFC0861B2F7F110015115E /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		FCDFC0881B2F7F110015115E /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		FCDFC08B1B2F7F110015115E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FCDFC08D1B2F7F120015115E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FCDFC0901B2F7F120015115E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -89,8 +85,6 @@
 			children = (
 				FCDFC0841B2F7F110015115E /* AppDelegate.swift */,
 				FCDFC0A61B2F87B00015115E /* ContainerVC.swift */,
-				FCDFC0861B2F7F110015115E /* FirstViewController.swift */,
-				FCDFC0881B2F7F110015115E /* SecondViewController.swift */,
 				FCE2F37E1B724C4D00773729 /* TabVCTemplate.swift */,
 				FCE2F37A1B7248BC00773729 /* LeftMenu.swift */,
 				FCE2F37C1B724B6B00773729 /* ModalWindow.swift */,
@@ -231,11 +225,9 @@
 			files = (
 				FCE2F37B1B7248BC00773729 /* LeftMenu.swift in Sources */,
 				FCDFC0A71B2F87B00015115E /* ContainerVC.swift in Sources */,
-				FCDFC0891B2F7F110015115E /* SecondViewController.swift in Sources */,
 				FCE2F37D1B724B6B00773729 /* ModalWindow.swift in Sources */,
 				FCE2F37F1B724C4D00773729 /* TabVCTemplate.swift in Sources */,
 				FCDFC0851B2F7F110015115E /* AppDelegate.swift in Sources */,
-				FCDFC0871B2F7F110015115E /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
