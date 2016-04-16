@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "840D9ACF27CCBC152BF3956B3FFFA4A1D50F2DAE",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "840D9ACF27CCBC152BF3956B3FFFA4A1D50F2DAE" : 0,
+    "CC0540DCD52FE2AA60B30766CB37DB7F32AFE9A1" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "FA89CF3F-5556-43FB-8DC2-286EEDCBEC50",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "840D9ACF27CCBC152BF3956B3FFFA4A1D50F2DAE" : "sp16-hackathon\/",
+    "CC0540DCD52FE2AA60B30766CB37DB7F32AFE9A1" : "FarmAppProject\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "LeftSlideoutMenu",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "5Cfruit\/LeftSlideoutMenu.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/nickreminder\/sp16-hackathon.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "840D9ACF27CCBC152BF3956B3FFFA4A1D50F2DAE"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Stigz\/FarmAppProject.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "CC0540DCD52FE2AA60B30766CB37DB7F32AFE9A1"
+    }
+  ]
+}

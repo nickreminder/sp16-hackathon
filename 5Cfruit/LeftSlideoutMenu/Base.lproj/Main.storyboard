@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--ContainerVC-->
@@ -71,54 +70,11 @@
                     <size key="freeformSize" width="568" height="568"/>
                     <connections>
                         <outlet property="scrollView" destination="y77-rI-f8X" id="BHV-3C-zD7"/>
-                        <segue destination="Tp7-wq-njg" kind="modal" identifier="openModalWindow" id="VxB-G8-Lik"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w0f-We-LMv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-64" y="-1058"/>
-        </scene>
-        <!--Modal Window-->
-        <scene sceneID="RKt-Gj-GFx">
-            <objects>
-                <viewController id="Tp7-wq-njg" customClass="ModalWindow" customModule="LeftSlideoutMenu" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="wxI-XV-O7F"/>
-                        <viewControllerLayoutGuide type="bottom" id="mef-WL-Ulw"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ZX8-VY-cn2">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Modal View Controller.  Presented by ContainerVC." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NbO-DQ-UfM">
-                                <rect key="frame" x="16" y="263" width="288" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mba-so-pg2">
-                                <rect key="frame" x="264" y="30" width="40" height="30"/>
-                                <state key="normal" title="Close">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="close:" destination="Tp7-wq-njg" eventType="touchUpInside" id="xWA-O3-XXs"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="0.98823529409999999" green="0.75686274509999996" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="mba-so-pg2" secondAttribute="trailing" id="CSl-Fb-oDv"/>
-                            <constraint firstItem="mba-so-pg2" firstAttribute="top" secondItem="wxI-XV-O7F" secondAttribute="bottom" constant="10" id="HN2-ZU-pR6"/>
-                            <constraint firstItem="NbO-DQ-UfM" firstAttribute="leading" secondItem="ZX8-VY-cn2" secondAttribute="leadingMargin" id="kJo-nj-fDL"/>
-                            <constraint firstAttribute="centerY" secondItem="NbO-DQ-UfM" secondAttribute="centerY" id="m4D-qw-UJ0"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="NbO-DQ-UfM" secondAttribute="trailing" id="mw1-mp-nWs"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="R5Z-cU-k66" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="502" y="-1058"/>
         </scene>
         <!--Left Menu-->
         <scene sceneID="kg8-vj-nS3">
@@ -153,16 +109,30 @@
                             <outlet property="delegate" destination="9lx-qu-CMP" id="dft-Wn-Nii"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="FJN-cE-n80"/>
+                    <navigationItem key="navigationItem" id="FJN-cE-n80">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="zd9-jk-MIv">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lZR-92-MWM">
+                                <rect key="frame" x="120" y="7" width="124" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Toggle Ripe Fruits"/>
+                                <connections>
+                                    <action selector="toggleRipeOnly" destination="9lx-qu-CMP" eventType="touchUpInside" id="RL9-bY-beU"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="fruitTable" destination="3Q7-Kj-1Q9" id="CJ3-n9-KXo"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mqN-I8-pZv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-218" y="-344"/>
         </scene>
-        <!--View Controller-->
+        <!--MapVC-->
         <scene sceneID="lFE-U4-vPO">
             <objects>
-                <viewController id="xsT-NK-rPg" sceneMemberID="viewController">
+                <viewController id="xsT-NK-rPg" customClass="MapVC" customModule="LeftSlideoutMenu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Hln-QU-KCS"/>
                         <viewControllerLayoutGuide type="bottom" id="y6x-uA-tSF"/>
@@ -170,12 +140,39 @@
                     <view key="view" contentMode="scaleToFill" id="Smd-qk-cCn">
                         <rect key="frame" x="0.0" y="0.0" width="568" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hbj-sI-Q7G">
+                                <rect key="frame" x="0.0" y="0.0" width="568" height="568"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NNN-6J-QgZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="568" height="568"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="NNN-6J-QgZ" secondAttribute="trailing" id="BJz-51-utX"/>
+                                    <constraint firstAttribute="bottom" secondItem="NNN-6J-QgZ" secondAttribute="bottom" id="MKc-sa-hH7"/>
+                                    <constraint firstItem="NNN-6J-QgZ" firstAttribute="top" secondItem="hbj-sI-Q7G" secondAttribute="top" id="q7j-Xn-ZEh"/>
+                                    <constraint firstItem="NNN-6J-QgZ" firstAttribute="leading" secondItem="hbj-sI-Q7G" secondAttribute="leading" id="zav-MS-xVQ"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="xsT-NK-rPg" id="Ftf-sg-w5f"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="NNN-6J-QgZ" id="4wF-el-nSz"/>
+                        <outlet property="imageViewBottomConstraint" destination="MKc-sa-hH7" id="VVF-7q-m7z"/>
+                        <outlet property="imageViewLeadingConstraint" destination="zav-MS-xVQ" id="scq-en-Cgx"/>
+                        <outlet property="imageViewTopConstraint" destination="q7j-Xn-ZEh" id="UoV-hz-2Bv"/>
+                        <outlet property="imageViewTrailingConstraint" destination="BJz-51-utX" id="ZE3-e5-dai"/>
+                        <outlet property="scrollView" destination="hbj-sI-Q7G" id="jKd-eK-1Qi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RxD-jh-miX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="696" y="-405"/>
+            <point key="canvasLocation" x="639" y="-432"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cqr-94-35a">

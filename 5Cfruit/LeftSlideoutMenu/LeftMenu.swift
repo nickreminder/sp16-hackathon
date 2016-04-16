@@ -10,33 +10,90 @@ import UIKit
 
 class LeftMenu : UITableViewController {
     
-    let menuOptions = ["Open Modal", "Open Push"]
+    var fruits = [Fruit]()
+    var showRipeOnly = false
+    
+    var ripeFruits = [Fruit]()
+    var selectedFruits = [Fruit]()
+    @IBOutlet weak var fruitTable: UITableView!
+    
+    
+    
+   
+    override func viewDidLoad() {
+        self.fruits = []
+        fruits.append(Fruit(name: "Apples", seasons: [7,8,9,10,11]))
+        fruits.append(Fruit(name: "Apricot", seasons: [5,6]))
+        fruits.append(Fruit(name: "Avocados", seasons: [11,12,1,2,4,5,6,7,8,9]))
+        fruits.append(Fruit(name: "Blood Oranges", seasons: [12,1,2,3,4,5]))
+        fruits.append(Fruit(name: "Figs", seasons: [7,8,9]))
+        fruits.append(Fruit(name: "Grapefruit",seasons: [11,12,1,2,3,4,5,6,7,8,9]))
+        fruits.append(Fruit(name: "Grapes", seasons: [5,6,7,8,9,10,11]))
+        fruits.append(Fruit(name: "Guava", seasons: []))
+        fruits.append(Fruit(name: "Kumquats", seasons: []))
+        fruits.append(Fruit(name: "Lemons", seasons: [11,12,1,2,3,4,5,6,7,8,9,10]))
+        fruits.append(Fruit(name: "Limes", seasons: []))
+        fruits.append(Fruit(name: "Loquats", seasons: []))
+        fruits.append(Fruit(name: "Nut Trees",seasons: []))
+        fruits.append(Fruit(name: "Olives", seasons: []))
+        fruits.append(Fruit(name: "Oranges", seasons: [11,12,1,2,3,4]))
+        fruits.append(Fruit(name: "Peaches", seasons: [5,6,7,8,9]))
+        fruits.append(Fruit(name: "Persimmons", seasons: []))
+        fruits.append(Fruit(name: "Pineapple Guava", seasons: []))
+        fruits.append(Fruit(name: "Plums", seasons: [5,6,7,8,9]))
+        fruits.append(Fruit(name: "Pomegranates", seasons: [9,10,11]))
+        fruits.append(Fruit(name: "Pomelos", seasons: []))
+        fruits.append(Fruit(name: "Rosemary", seasons: []))
+        fruits.append(Fruit(name: "Sapotes", seasons: []))
+        fruits.append(Fruit(name: "Strawberry Guavas", seasons: []))
+        fruits.append(Fruit(name: "Strawberries", seasons: [11,12,1,2,3,4,5,6,7,8,9,10]))
+        fruits.append(Fruit(name: "Tangelos", seasons: []))
+        
+        setRipeFruits()
+    }
+    
+    func setRipeFruits(){
+   
+        let date = NSDate()
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components([.Day , .Month , .Year], fromDate: date)
+        let currentMonth = components.month
+        
+
+    
+    
+        for fruit in fruits{
+            for month in fruit.seasons {
+                if month == currentMonth{
+                    ripeFruits.append(fruit)
+                }
+            }
+        }
+       
+    }
+    @IBAction func toggleRipeOnly(){
+        if showRipeOnly == false{
+            showRipeOnly = true
+        }
+        else if showRipeOnly == true{
+            showRipeOnly = false
+        }
+        fruitTable.reloadData()
+    }
     
 }
+
+
 
 // MARK: - UITableViewDelegate methods
 
 extension LeftMenu {
-    
+   //for when someone clicks on it
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        switch indexPath.row {
-        case 0:
-            // ContainerVC.swift listens for this
-            NSNotificationCenter.defaultCenter().postNotificationName("openModalWindow", object: nil)
-        case 1:
-            // Both FirstViewController and SecondViewController listen for this
-            NSNotificationCenter.defaultCenter().postNotificationName("openPushWindow", object: nil)
-        default:
-            print("indexPath.row:: \(indexPath.row)")
-        }
-        
-        // also close the menu
-        NSNotificationCenter.defaultCenter().postNotificationName("closeMenuViaNotification", object: nil)
-        
-    }
     
+    }
 }
 
 // MARK: - UITableViewDataSource methods
@@ -44,12 +101,23 @@ extension LeftMenu {
 extension LeftMenu {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        if(showRipeOnly == true){
+            return ripeFruits.count
+        }
+        else{
+            return fruits.count
+        }
+        
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
-        cell.textLabel?.text = menuOptions[indexPath.row]
+        if(showRipeOnly == true){
+            cell.textLabel?.text = ripeFruits[indexPath.row].name
+        }
+        else{
+            cell.textLabel?.text = fruits[indexPath.row].name
+        }
         return cell
     }
     
